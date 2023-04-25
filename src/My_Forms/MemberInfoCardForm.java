@@ -25,7 +25,7 @@ public class MemberInfoCardForm extends javax.swing.JFrame {
         jPanel1.setBorder(panelHeaderBorder);
         //display image in the top
         My_classes.Func_Class func = new My_classes.Func_Class();
-        func.displayImage(70,50,null, "/My_images/books-2022464_640.png", jLabel_FormTitle);
+        func.displayImage(70,50,null, "/My_images/members-42918_640.png", jLabel_FormTitle);
         //func.displayImage(80,65,null, "/My_images/blank-profile.png", jLabel_Image);
         displayMemberInfo(member_id);
 

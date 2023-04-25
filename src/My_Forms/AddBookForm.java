@@ -221,6 +221,7 @@ public class AddBookForm extends javax.swing.JFrame {
         jLabel11.setText("ID:");
 
         jTextField_ID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextField_ID.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -420,20 +421,7 @@ public class AddBookForm extends javax.swing.JFrame {
             String received_date = dateFormat.format(jDateChooser_Date.getDate());
             Path path = Paths.get(imagePath);
             byte[] img = Files.readAllBytes(path);                  
-            book.addBook(id, isbn, name, author_id, genre_id, quantity, publisher, price, received_date, description, img);
-             jTextField_ID.setText("");
-             jTextField_ISBN.setText("");
-             jTextField_Name.setText("");
-             jTextField_Author.setText("");
-             jLabel_Author_ID.setText("ID");
-             jComboBox_Genre_.setSelectedItem(0);
-             jTextField_Price.setText("");
-             jTextField_Publsher.setText("");
-             jTextArea_Decription.setText("");
-             jSpinner_Quantity.setValue(0);
-              jDateChooser_Date.setDate(new Date());
-             jLabel_Image.setIcon(null);
-             jLabel_ImagePath.setText("picture path...");
+            book.addBook(id, isbn, name, author_id, genre_id, quantity, publisher, price, received_date, description, img);          
              this.dispose();
         } catch (IOException ex) {
              JOptionPane.showMessageDialog(null, "Bạn cần thêm ảnh!","", 1);

@@ -34,13 +34,13 @@ public class ManageAuthorsForm extends javax.swing.JFrame {
         jLabel_EmptyFirstName_.setVisible(false);
         jLabel_EmptyLastName_.setVisible(false);
         populateJtableWithAuthors("");
-       // Random();
+        Random();
      
     }
-//     public void Random(){
-//        Random rd = new Random();
-//        jTextField_ID.setText(""+rd.nextInt(1000+1));
-//    }
+     public void Random(){
+        Random rd = new Random();
+        jTextField_ID.setText(""+rd.nextInt(1000+1));
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -211,11 +211,11 @@ public class ManageAuthorsForm extends javax.swing.JFrame {
                             .addComponent(jTextField_FirstName)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
+                        .addGap(86, 86, 86)
                         .addComponent(jButton_Add_)
-                        .addGap(37, 37, 37)
+                        .addGap(38, 38, 38)
                         .addComponent(jButton_Edit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                         .addComponent(jButton_Delete)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)

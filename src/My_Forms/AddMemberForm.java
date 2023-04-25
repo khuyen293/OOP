@@ -157,6 +157,7 @@ public class AddMemberForm extends javax.swing.JFrame {
         jLabel1.setText("Enter The ID:");
 
         jTextField_ID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextField_ID.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

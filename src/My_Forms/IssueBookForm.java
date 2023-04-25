@@ -415,7 +415,7 @@ public class IssueBookForm extends javax.swing.JFrame {
                 //khi thanh vien ton tai
                 member_Exist = true;
             }else{//neeus sach khong co san thi thoat
-                JOptionPane.showConfirmDialog(null, "Sách hiện không có sẵn", "Thông báo", 2);
+                JOptionPane.showConfirmDialog(null, "Thành viên hiện không tồn tại", "Thông báo", 2);
                 jLabel_MemberFullName.setText("Member Full Name");
                 member_Exist = false;
             }
