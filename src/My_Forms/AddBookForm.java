@@ -421,8 +421,8 @@ public class AddBookForm extends javax.swing.JFrame {
             String received_date = dateFormat.format(jDateChooser_Date.getDate());
             Path path = Paths.get(imagePath);
             byte[] img = Files.readAllBytes(path);                  
-            book.addBook(id, isbn, name, author_id, genre_id, quantity, publisher, price, received_date, description, img);          
-             this.dispose();
+            book.addBook(id, isbn, name, author_id, genre_id, quantity, publisher, price, received_date, description, img);
+            Random();
         } catch (IOException ex) {
              JOptionPane.showMessageDialog(null, "Bạn cần thêm ảnh!","", 1);
         } catch (NumberFormatException ex) {
@@ -503,8 +503,7 @@ public class AddBookForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox_Genre_ActionPerformed
 
     private void jButton_Clear_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Clear_ActionPerformed
-        // xóa đi một fields
-        jTextField_ID.setText("");
+        // xóa đi một fields        
         jTextField_ISBN.setText("");
         jTextField_Name.setText("");
         jTextField_Author.setText("");

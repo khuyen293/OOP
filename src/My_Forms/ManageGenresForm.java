@@ -82,6 +82,7 @@ public class ManageGenresForm extends javax.swing.JFrame {
         jLabel2.setText("Name:");
 
         jTextField_ID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextField_ID.setEnabled(false);
 
         jTextField_Name.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -241,11 +242,16 @@ public class ManageGenresForm extends javax.swing.JFrame {
         if(name.trim().isEmpty()){
             jLabel_EmptyName_.setVisible(true);
         }else{   
-            try{
+            try{               
                 int id = Integer.parseInt(jTextField_ID.getText());
-                genre.addGenre(id,name);
-                jTextField_ID.setText("");
-                jTextField_Name.setText("");
+                if(genre.checkGenreIdExists(name)){
+                    JOptionPane.showMessageDialog(null,"Thể loại đã tồn tại", "", 0);
+                }
+                else{
+                    genre.addGenre(id,name);                   
+                    jTextField_Name.setText("");
+                    Random();
+                    }
             }catch(Exception e){
                 
             }

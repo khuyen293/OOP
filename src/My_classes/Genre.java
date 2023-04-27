@@ -96,25 +96,6 @@ public class Genre {
     // tạo hàm cho danh sách các thể loại vào một mảng
    public ArrayList<Genre> genreList() {
     ArrayList<Genre> gList = new ArrayList<>();
-    //cach 1
-//    String selectQuery = "SELECT * FROM book_genres";
-//    PreparedStatement ps;
-//    ResultSet rs;
-//    try {
-//        ps = DB.getConnection().prepareStatement(selectQuery);
-//        rs = (ResultSet) ps.executeQuery();
-//        Genre genre;
-//        while (rs.next()) {               
-//            int id = rs.getInt("id");
-//            String name = rs.getString("name");
-//            genre = new Genre(id, name);
-//            gList.add(genre);                
-//        }
-//    } catch (SQLException ex) {
-//        Logger.getLogger(Genre.class.getName()).log(Level.SEVERE, null, ex);
-//    }
-//    return gList;
-
      //cach 2
     try{
         ResultSet rs = func.getData("SELECT * FROM book_genres");
@@ -167,4 +148,20 @@ public class Genre {
         return genre;
    }	
     
+   
+         // tạo một hàm kiểm tra nếu người dùng đã tồm tại
+    public boolean checkGenreIdExists(String name) {
+    boolean exists = false;
+    try {
+        ResultSet rs = func.getData("select * from book_genres where name = '"+ name +"'");
+        if(rs.next()) { 
+            exists = true;
+        }
+    } catch(SQLException ex) {
+        Logger.getLogger(Genre.class.getName()).log(Level.SEVERE, null, ex);
+        // Xử lý lỗi ở đây
+    }
+    return exists;
+    }
+
 }

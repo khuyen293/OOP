@@ -333,7 +333,7 @@ public class SignupForm extends javax.swing.JFrame {
                 user.addUser(id, firstName, lastName, username, password_1, userType);
                 // Làm mới bảng
                 populateJtableWithUsers();
-                jTextField_ID.setText("");
+                Random();             
                 jTextField_FirstName.setText("");
                 jTextField_LastName.setText("");
                 jTextField_UserName.setText("");

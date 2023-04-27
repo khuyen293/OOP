@@ -80,9 +80,9 @@ public void addUser(int id, String firstName, String lastName, String username, 
         ps.setString(6, userType);
         
         if (ps.executeUpdate() != 0) {
-            JOptionPane.showMessageDialog(null, "Đã thêm một tài khoản người dùng mới", "", 1);
+            JOptionPane.showMessageDialog(null, "Đã thêm một tài khoản mới", "", 1);
         } else {
-            JOptionPane.showMessageDialog(null, "Tài khoản người dùng chưa được thêm", "", 2);
+            JOptionPane.showMessageDialog(null, "Tài khoản hưa được thêm", "", 2);
         }
     } catch (SQLException ex) {
         Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
@@ -119,9 +119,9 @@ public void addUser(int id, String firstName, String lastName, String username, 
             ps.setInt(1, id);
            
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã xóa tài khoản người dùng", "", 1);
+                JOptionPane.showMessageDialog(null, "Đã xóa tài khoản", "", 1);
             }else{
-                JOptionPane.showMessageDialog(null, "Tài khoản người dùng chưa được xóa", "", 2);
+                JOptionPane.showMessageDialog(null, "Tài khoản chưa được xóa", "", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);

@@ -282,18 +282,6 @@ public class Book {
     
     // lấy thông tin sách bởi dữ liệu
     public Book getBookById(Integer id) throws SQLException{
-        
-//        Func_Class func = new Func_Class();
-//        String query = "SELECT * FROM books WHERE id="+id;
-//        ResultSet rs = func.getData(query);
-//        
-//        if(rs.next()){
-//            return new Book(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4), rs.getInt(5), rs.getInt(6),
-//               rs.getString(7), rs.getDouble(8), rs.getString(9), rs.getString(10), rs.getBytes(11));
-//        }
-//        else{            
-//            return null;
-//        }
              Func_Class func = new Func_Class();
              String query = "SELECT * FROM books WHERE id="+id;
         ResultSet rs = func.getData(query);

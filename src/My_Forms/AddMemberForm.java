@@ -273,12 +273,7 @@ public class AddMemberForm extends javax.swing.JFrame {
         String phone = jTextField_Phone_.getText();
         String email = jTextField_Email.getText();
         String gender = jComboBox_Gender.getSelectedItem().toString();
-        int id = Integer.parseInt(jTextField_ID.getText());
-             jTextField_ID.setText("");
-             jTextField_FirstName.setText("");
-             jTextField_LastName.setText("");
-             jTextField_Phone_.setText("");
-             jTextField_Email.setText("");            
+        int id = Integer.parseInt(jTextField_ID.getText());                     
         
         //hiển thị empty nếu file tồn tại
         if(firstName.trim().isEmpty()){
@@ -291,7 +286,11 @@ public class AddMemberForm extends javax.swing.JFrame {
         }
         else{           
             member.addMember(id, firstName, lastName, phone, email, gender);
-            this.dispose();
+             Random();
+             jTextField_FirstName.setText("");
+             jTextField_LastName.setText("");
+             jTextField_Phone_.setText("");
+             jTextField_Email.setText("");    
             // làm mới bảng 
          
             

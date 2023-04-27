@@ -97,6 +97,7 @@ public class ManageUsersForm extends javax.swing.JFrame {
         jLabel2.setText("First Name:");
 
         jTextField_ID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextField_ID.setEnabled(false);
 
         jTextField_FirstName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
@@ -377,12 +378,12 @@ public class ManageUsersForm extends javax.swing.JFrame {
         try {
             int id = Integer.parseInt(jTextField_ID.getText());
             if (user.checkUsernameExists(username)) {
-                JOptionPane.showMessageDialog(null, "Tên người dùng đã tồn tại", "", 0);
+                JOptionPane.showMessageDialog(null, "Tên tài khoản đã tồn tại", "", 0);
             } else {
                 user.addUser(id, firstName, lastName, username, password_1, userType);
                 // Làm mới bảng
                 populateJtableWithUsers();
-                jTextField_ID.setText("");
+                Random();              
                 jTextField_FirstName.setText("");
                 jTextField_LastName.setText("");
                 jTextField_UserName.setText("");
@@ -396,7 +397,7 @@ public class ManageUsersForm extends javax.swing.JFrame {
             // đặt lại các giá trị của các trường dữ liệu thành rỗng
             
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Người dùng thêm không hợp lệ", "", 0);
+            JOptionPane.showMessageDialog(null, "Tài khoản thêm không hợp lệ", "", 0);
         }
     }
     }//GEN-LAST:event_jButton_Add_ActionPerformed
@@ -432,7 +433,7 @@ public class ManageUsersForm extends javax.swing.JFrame {
             try{
                     int id = Integer.parseInt(jTextField_ID.getText());
                     if(user.checkUsernameExists(username)){
-                      JOptionPane.showMessageDialog(null,"Tên người dùng đã tồn tại", "", 0);
+                      JOptionPane.showMessageDialog(null,"Tên tài khoản đã tồn tại", "", 0);
                 
                          }else{
                     user.editUser(id, firstName, lastName, username, password_1, userType);
@@ -450,7 +451,7 @@ public class ManageUsersForm extends javax.swing.JFrame {
                 
                 
             }catch(NumberFormatException ex){
-                JOptionPane.showMessageDialog(null,"Chọn người dùng bạn muốn chỉnh sửa từ bảng", "", 0);
+                JOptionPane.showMessageDialog(null,"Chọn tài khoản bạn muốn chỉnh sửa từ bảng", "Thông báo", 0);
             }
            
            
@@ -462,7 +463,7 @@ public class ManageUsersForm extends javax.swing.JFrame {
         //xóa tác giả
         try{
                 int id = Integer.parseInt(jTextField_ID.getText());
-                int confirm = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn xóa tài khoản người dùng này?", "", JOptionPane.YES_NO_OPTION);
+                int confirm = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn xóa tài khoản này?", "Thông báo", JOptionPane.YES_NO_OPTION);
                 if(confirm == JOptionPane.YES_OPTION){
                 user.removeUser(id);
                 }
@@ -480,7 +481,7 @@ public class ManageUsersForm extends javax.swing.JFrame {
                  hideLabels();
                 
             }catch(NumberFormatException ex){
-                JOptionPane.showMessageDialog(null, "Không hợp lệ", "", 0);
+                JOptionPane.showMessageDialog(null, "Không hợp lệ", "Thông báo", 0);
             }
     }//GEN-LAST:event_jButton_DeleteActionPerformed
 

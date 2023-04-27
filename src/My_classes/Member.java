@@ -65,6 +65,8 @@ public class Member {
 		this.gender = gender;
 	}
 	
+        My_classes.Func_Class func = new My_classes.Func_Class();
+        
         public Member getMember(int id) {
         // Check if the user already exists
         Member member = null;
@@ -192,5 +194,19 @@ public class Member {
     }
     return mList;
 }
+              // tạo một hàm kiểm tra nếu người dùng đã tồm tại
+    public boolean checkMemberIdExists(int id) {
+    boolean exists = false;
+    try {
+        ResultSet rs = func.getData("select * from members where id = '"+ id+ "'");
+        if(rs.next()) { 
+            exists = true;
+        }
+    } catch(SQLException ex) {
+        Logger.getLogger(Member.class.getName()).log(Level.SEVERE, null, ex);
+        // Xử lý lỗi ở đây
+    }
+    return exists;
+    }
 
 }

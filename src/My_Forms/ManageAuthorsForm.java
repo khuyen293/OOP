@@ -87,6 +87,7 @@ public class ManageAuthorsForm extends javax.swing.JFrame {
         jLabel2.setText("First Name:");
 
         jTextField_ID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextField_ID.setEnabled(false);
 
         jTextField_FirstName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
@@ -304,7 +305,7 @@ public class ManageAuthorsForm extends javax.swing.JFrame {
             try{
                 int id = Integer.parseInt(jTextField_ID.getText());
                 author.addAuthor(id, firstName, lastName, field_Of_Expertise, about);
-                jTextField_ID.setText("");
+                Random();
                 jTextField_FirstName.setText("");
                 jTextField_LastName.setText("");
                 jTextField_Expertise.setText("");
