@@ -384,6 +384,12 @@ public class IssueBookForm extends javax.swing.JFrame {
              JOptionPane.showConfirmDialog(null, "Dữ liệu trả về phải sau ngày phát hành", "Thông báo", 2);
         }else{
              issue.AddIssue(book_id, member_id, "issued", issue_date, return_date, note);
+             jSpinner_BookId.setValue(0);
+             jSpinner_MemberId.setValue(0);
+             jLabel_Avalable.setText("Yes-or-No");
+             jDateChooser_Issue_Date.setDate(rtnDate);
+             jDateChooser_Return_Date.setDate(rtnDate);
+             jTextArea_Note.setText("");
         }
        
         }catch(HeadlessException | NullPointerException | ParseException ex){

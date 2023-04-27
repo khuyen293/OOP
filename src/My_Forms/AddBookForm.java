@@ -397,10 +397,10 @@ public class AddBookForm extends javax.swing.JFrame {
 //        jLabel_EmptyPhone_.setVisible(false);
         String isbn = jTextField_ISBN.getText();
         if(!verif()){
-             JOptionPane.showMessageDialog(null, "Không hợp lệ","", 2);
+             JOptionPane.showMessageDialog(null, "Không hợp lệ","Thông báo", 2);
             
         }else if(book.isISBNexists(isbn)){
-            JOptionPane.showMessageDialog(null, "ISBN đã tồn tại","", 2);
+            JOptionPane.showMessageDialog(null, "ISBN đã tồn tại","Thông báo", 2);
         }
         else{
             try {
@@ -424,11 +424,11 @@ public class AddBookForm extends javax.swing.JFrame {
             book.addBook(id, isbn, name, author_id, genre_id, quantity, publisher, price, received_date, description, img);
             Random();
         } catch (IOException ex) {
-             JOptionPane.showMessageDialog(null, "Bạn cần thêm ảnh!","", 1);
+             JOptionPane.showMessageDialog(null, "Bạn cần thêm ảnh!","Thông báo", 1);
         } catch (NumberFormatException ex) {
-             JOptionPane.showMessageDialog(null, "Bạn nhập sai dữ liệu!","", 1);
+             JOptionPane.showMessageDialog(null, "Bạn nhập sai dữ liệu!","Thông báo", 1);
         } catch (NullPointerException ex) {
-            JOptionPane.showMessageDialog(null, "Bạn cần thêm dữ liệu!","", 1);
+            JOptionPane.showMessageDialog(null, "Bạn cần thêm dữ liệu!","Thông báo", 1);
         }
             
         }
@@ -503,7 +503,8 @@ public class AddBookForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox_Genre_ActionPerformed
 
     private void jButton_Clear_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Clear_ActionPerformed
-        // xóa đi một fields        
+        // xóa đi một fields 
+        Random();
         jTextField_ISBN.setText("");
         jTextField_Name.setText("");
         jTextField_Author.setText("");

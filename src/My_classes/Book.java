@@ -110,29 +110,8 @@ public class Book {
     
          Func_Class func = new Func_Class();  
                            	
-        public Book getBook(int id) {
-        // Check if the user already exists
-        Book book = null;
-    String selectQuery = "SELECT * FROM books WHERE id=?";
-    try {
-        PreparedStatement ps = DB.getConnection().prepareStatement(selectQuery);
-        ps.setInt(1, id);
-        ResultSet rs = ps.executeQuery();
-        if (rs.next()) {
-           book = new Book(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4), rs.getInt(5), rs.getInt(6),
-               rs.getString(7), rs.getDouble(8), rs.getString(9), rs.getString(10), rs.getBytes(11));
-        }
-    } catch (SQLException ex) {
-        Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    return book;
-}
-         
-    public void addBook(int id, String isbn, String name, Integer author_id, Integer genre_id, Integer quantity, String publisher,double price, String date_received, String description, byte[] cover){
-                if (getBook(id) != null) {
-                    JOptionPane.showMessageDialog(null, "ID sách đã tồn tại", "", 2);
-                    return;
-                }
+
+    public void addBook(int id, String isbn, String name, Integer author_id, Integer genre_id, Integer quantity, String publisher,double price, String date_received, String description, byte[] cover){               
         String insertQuery = "INSERT INTO books (id, isbn, name,author_id, genre_id, quantity, publisher, price, date_received, description, cover_image) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps = DB.getConnection().prepareStatement(insertQuery);
@@ -150,9 +129,9 @@ public class Book {
 
           
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã thêm sách mới","", 1);                 
+                JOptionPane.showMessageDialog(null, "Đã thêm sách mới","Thông báo", 1);                 
             }else{
-                JOptionPane.showMessageDialog(null, "Sách mới chưa được thêm chưa được thêm","", 2);
+                JOptionPane.showMessageDialog(null, "Sách mới chưa được thêm chưa được thêm","Thông báo", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);
@@ -194,9 +173,9 @@ public class Book {
         
         }                  
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã sửa thông tin sách","", 1);                 
+                JOptionPane.showMessageDialog(null, "Đã sửa thông tin sách","Thông báo", 1);                 
             }else{
-                JOptionPane.showMessageDialog(null, "Thông tin sách chưa được sửa","", 2);
+                JOptionPane.showMessageDialog(null, "Thông tin sách chưa được sửa","Thông báo", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);
@@ -210,9 +189,9 @@ public class Book {
             ps.setInt(1, id);
            
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã xóa thông tin sách", "", 1);
+                JOptionPane.showMessageDialog(null, "Đã xóa thông tin sách", "Thông báo", 1);
             }else{
-                JOptionPane.showMessageDialog(null, "Thông tin sách chưa được xóa", "", 2);
+                JOptionPane.showMessageDialog(null, "Thông tin sách chưa được xóa", "Thông báo", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);

@@ -373,12 +373,12 @@ public class ManageUsersForm extends javax.swing.JFrame {
     } else if (password_1.trim().isEmpty()) {
         jLabel_Password_.setForeground(Color.red);
     } else if (!password_1.equals(password_2)) {
-        JOptionPane.showMessageDialog(null, "Vui lòng xác nhập lại mật khẩu", "", 0);
+        JOptionPane.showMessageDialog(null, "Vui lòng xác nhập lại mật khẩu", "Thông báo", 0);
     } else {
         try {
             int id = Integer.parseInt(jTextField_ID.getText());
             if (user.checkUsernameExists(username)) {
-                JOptionPane.showMessageDialog(null, "Tên tài khoản đã tồn tại", "", 0);
+                JOptionPane.showMessageDialog(null, "Tên tài khoản đã tồn tại", "Thông báo", 0);
             } else {
                 user.addUser(id, firstName, lastName, username, password_1, userType);
                 // Làm mới bảng
@@ -397,7 +397,7 @@ public class ManageUsersForm extends javax.swing.JFrame {
             // đặt lại các giá trị của các trường dữ liệu thành rỗng
             
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Tài khoản thêm không hợp lệ", "", 0);
+            JOptionPane.showMessageDialog(null, "Tài khoản thêm không hợp lệ", "Thông báo", 0);
         }
     }
     }//GEN-LAST:event_jButton_Add_ActionPerformed
@@ -427,20 +427,20 @@ public class ManageUsersForm extends javax.swing.JFrame {
             //jLabel_EmptyPassword_.setVisible(true);
             jLabel_Password_.setForeground(Color.red);
         }else if(!password_1.equals(password_2)){
-            JOptionPane.showMessageDialog(null, "Vui lòng xác nhập lại mật khẩu", "", 0);
+            JOptionPane.showMessageDialog(null, "Vui lòng xác nhập lại mật khẩu", "Thông báo", 0);
             //khi chúng ta tạo ra người dùng thì chúng ta phải kiểm tra xem người dùng này đã được tạo hay chưa
         }else{ 
             try{
                     int id = Integer.parseInt(jTextField_ID.getText());
                     if(user.checkUsernameExists(username)){
-                      JOptionPane.showMessageDialog(null,"Tên tài khoản đã tồn tại", "", 0);
+                      JOptionPane.showMessageDialog(null,"Tên tài khoản đã tồn tại", "Thông báo", 0);
                 
                          }else{
                     user.editUser(id, firstName, lastName, username, password_1, userType);
                      // làm mới bảng 
                     populateJtableWithUsers();
                     }
-                 jTextField_ID.setText("");
+                 Random();
                  jTextField_FirstName.setText("");
                  jTextField_LastName.setText("");
                  jTextField_UserName.setText("");
@@ -471,7 +471,7 @@ public class ManageUsersForm extends javax.swing.JFrame {
                 //tichs vào genres và xóa
                 populateJtableWithUsers();
                  //xóa luôn ở form
-                 jTextField_ID.setText("");
+                 Random();
                  jTextField_FirstName.setText("");
                  jTextField_LastName.setText("");
                  jTextField_UserName.setText("");

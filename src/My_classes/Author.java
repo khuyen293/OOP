@@ -98,9 +98,9 @@ public class Author {
             ps.setInt(5, id);
            
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã sửa thông tin tác giả", "", 1);
+                JOptionPane.showMessageDialog(null, "Đã sửa thông tin tác giả", "Thông báo", 1);
             }else{
-                JOptionPane.showMessageDialog(null, "Thông tin tác giả chưa được sửa", "", 2);
+                JOptionPane.showMessageDialog(null, "Thông tin tác giả chưa được sửa", "Thông báo", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Author.class.getName()).log(Level.SEVERE, null, ex);
@@ -115,9 +115,9 @@ public class Author {
             ps.setInt(1, id);
            
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã xóa thông tin tác giả", "", 1);
+                JOptionPane.showMessageDialog(null, "Đã xóa thông tin tác giả", "Thông báo", 1);
             }else{
-                JOptionPane.showMessageDialog(null, "Thông tin tác giả chưa được xóa", "", 2);
+                JOptionPane.showMessageDialog(null, "Thông tin tác giả chưa được xóa", "Thông báo", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Author.class.getName()).log(Level.SEVERE, null, ex);

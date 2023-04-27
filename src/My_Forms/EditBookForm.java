@@ -408,7 +408,7 @@ public class EditBookForm extends javax.swing.JFrame {
        
         String isbn = jTextField_ISBN.getText();
         if(!verif()){
-             JOptionPane.showMessageDialog(null, "Không hợp lệ","", 2);
+             JOptionPane.showMessageDialog(null, "Không hợp lệ","Thông báo", 2);
             
         }
         else{
@@ -438,9 +438,9 @@ public class EditBookForm extends javax.swing.JFrame {
             }
            
         } catch (NumberFormatException ex) {
-             JOptionPane.showMessageDialog(null, "Bạn nhập sai dữ liệu!","", 1);
+             JOptionPane.showMessageDialog(null, "Bạn nhập sai dữ liệu!","Thông báo", 1);
         } catch (NullPointerException ex) {
-            JOptionPane.showMessageDialog(null, "Bạn cần thêm dữ liệu!","", 1);
+            JOptionPane.showMessageDialog(null, "Bạn cần thêm dữ liệu!","Thông báo", 1);
         }
             
         }

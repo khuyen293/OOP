@@ -217,7 +217,7 @@ public class AuthorsListForm extends javax.swing.JFrame {
     private void jButton_Search_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Search_ActionPerformed
         // Tim kiem va in du lieu ra bang
         String value = jTextField_Search.getText();
-        String query = "SELECT * FROM authors WHERE id LIKE '%"+value+"%'";
+        String query = "SELECT * FROM authors WHERE id LIKE '%"+value+"%' or firtName LIKE '%"+value+"%' or lastName LIKE '%"+value+"%' ";
         populateJtableWithAuthors(query);
 
     }//GEN-LAST:event_jButton_Search_ActionPerformed

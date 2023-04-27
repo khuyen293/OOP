@@ -147,7 +147,7 @@ public class DeleteMemberForm extends javax.swing.JFrame {
             Integer id = Integer.parseInt(jTextField_ID.getText());
             
             //hiển thị thông báo trước khi xóa
-            int confirm = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn xóa thành viên này?", "", JOptionPane.YES_NO_OPTION);
+            int confirm = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn xóa thành viên này?", "Thông báo", JOptionPane.YES_NO_OPTION);
             if(confirm == JOptionPane.YES_OPTION){
                 member.removeMember(id);
                 jTextField_ID.setText("");

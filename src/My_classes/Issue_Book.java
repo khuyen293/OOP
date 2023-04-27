@@ -81,9 +81,9 @@ public Issue_Book(int book_id, int member_id, String status, String issue_date, 
 
           
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã chuyển đến","", 1);                 
+                JOptionPane.showMessageDialog(null, "Đã chuyển đến","Thông báo", 1);                 
             }else{
-                JOptionPane.showMessageDialog(null, "Chưa chuyển đến","", 2);
+                JOptionPane.showMessageDialog(null, "Chưa chuyển đến","Thông báo", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);

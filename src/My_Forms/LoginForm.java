@@ -195,7 +195,7 @@ public class LoginForm extends javax.swing.JFrame {
         String password = String.valueOf(jPassword_Pass.getPassword());
         //check if the fields are empty
         if(username.trim().equals("") || password.trim().equals("")){
-            JOptionPane.showConfirmDialog(null, "Vui lòng nhập tên người dùng và mật khẩu","Trống",2);
+            JOptionPane.showConfirmDialog(null, "Vui lòng nhập tên người dùng và mật khẩu","Thông báo",2);
         }else{
                 My_classes.Users user = new My_classes.Users().login(username, password);
                
@@ -217,7 +217,7 @@ public class LoginForm extends javax.swing.JFrame {
                     this.dispose();
                 }
                  else{
-                    JOptionPane.showConfirmDialog(null, "Tên người dùng hoặc mật khẩu không hợp lệ","Dữ liệu sai",0);
+                    JOptionPane.showConfirmDialog(null, "Tên người dùng hoặc mật khẩu không hợp lệ","Thông báo",0);
                 }
         }
         

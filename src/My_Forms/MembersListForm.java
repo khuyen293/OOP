@@ -217,12 +217,12 @@ public class MembersListForm extends javax.swing.JFrame {
                 jLabel_Email.setText(SelecteMember.getEmail());
                 jLabel_Gender.setText(SelecteMember.getGender());
             }else{
-                JOptionPane.showMessageDialog(null, "Không tìm thấy thành viên có id này", "", 3);
+                JOptionPane.showMessageDialog(null, "Không tìm thấy thành viên có id này", "Thông báo", 3);
             }
             
         } catch (Exception ex) {
             //Logger.getLogger(EditMemberForm.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Thông tin không hợp lệ", "", 3);
+            JOptionPane.showMessageDialog(null, "Thông tin không hợp lệ", "Thông báo", 3);
         }
         
     }//GEN-LAST:event_jTable_Members_MouseClicked

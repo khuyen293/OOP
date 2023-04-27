@@ -338,13 +338,13 @@ public class ManageAuthorsForm extends javax.swing.JFrame {
                  populateJtableWithAuthors("");
                  jLabel_EmptyLastName_.setVisible(false);
                  jLabel_EmptyFirstName_.setVisible(false);
-                 jTextField_ID.setText("");
+                 Random();
                 jTextField_FirstName.setText("");
                 jTextField_LastName.setText("");
                 jTextField_Expertise.setText("");
                 jTextArea_About.setText("");
             }catch(NumberFormatException ex){
-                JOptionPane.showMessageDialog(null, "Không hợp lệ - " + ex.getMessage(), "", 3);
+                JOptionPane.showMessageDialog(null, "Không hợp lệ - " + ex.getMessage(), "Thông báo", 3);
             }
             
             
@@ -355,7 +355,7 @@ public class ManageAuthorsForm extends javax.swing.JFrame {
         //xóa tác giả
         try{
                 int id = Integer.parseInt(jTextField_ID.getText());
-                int confirm = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn xóa tác giả này?", "", JOptionPane.YES_NO_OPTION);
+                int confirm = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn xóa tác giả này?", "Thông báo", JOptionPane.YES_NO_OPTION);
                 if(confirm == JOptionPane.YES_OPTION){
                 author.removeAuthor(id);
                 }
@@ -363,7 +363,7 @@ public class ManageAuthorsForm extends javax.swing.JFrame {
                 //tichs vào genres và xóa
                  populateJtableWithAuthors("");
                  //xóa luôn ở form
-                 jTextField_ID.setText("");
+                 Random();
                  jTextField_FirstName.setText("");
                  jTextField_LastName.setText("");
                  jTextField_Expertise.setText("");

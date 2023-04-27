@@ -158,7 +158,7 @@ public class DeleteBookForm extends javax.swing.JFrame {
             Integer id = (Integer) jSpinner_ID.getValue();       
             try {
                  //hiển thị thông báo trước khi xóa
-            int confirm = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn xóa thông tin sách không?", "", JOptionPane.YES_NO_OPTION);
+            int confirm = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn xóa thông tin sách không?", "Thông báo", JOptionPane.YES_NO_OPTION);
             if(confirm == JOptionPane.YES_OPTION){
                 book.removeBook(id);
                 jSpinner_ID.setValue(0);

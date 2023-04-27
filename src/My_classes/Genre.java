@@ -48,9 +48,9 @@ public class Genre {
             ps.setInt(1, _id);
             ps.setString(2, _name);
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã thêm một thể loại", "Thể loại được thêm", 1);
+                JOptionPane.showMessageDialog(null, "Đã thêm một thể loại", "Thông báo", 1);
             }else{
-                JOptionPane.showMessageDialog(null, "Thể loại chưa được thêm", "Thể loại chưa được thêm", 2);
+                JOptionPane.showMessageDialog(null, "Thể loại chưa được thêm", "Thông báo", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Genre.class.getName()).log(Level.SEVERE, null, ex);
@@ -66,9 +66,9 @@ public class Genre {
             ps.setInt(2, _id);
            
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã sửa một thể loại", "", 1);
+                JOptionPane.showMessageDialog(null, "Đã sửa một thể loại", "Thông báo", 1);
             }else{
-                JOptionPane.showMessageDialog(null, "Thể loại chưa được sửa", "", 2);
+                JOptionPane.showMessageDialog(null, "Thể loại chưa được sửa", "Thông báo", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Genre.class.getName()).log(Level.SEVERE, null, ex);
@@ -83,9 +83,9 @@ public class Genre {
             ps.setInt(1, _id);
            
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã xóa một thể loại", "", 1);
+                JOptionPane.showMessageDialog(null, "Đã xóa một thể loại", "Thông báo", 1);
             }else{
-                JOptionPane.showMessageDialog(null, "Thể loại chưa được xóa", "", 2);
+                JOptionPane.showMessageDialog(null, "Thể loại chưa được xóa", "Thông báo", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Genre.class.getName()).log(Level.SEVERE, null, ex);

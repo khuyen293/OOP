@@ -323,12 +323,12 @@ public class SignupForm extends javax.swing.JFrame {
     } else if (password_1.trim().isEmpty()) {
         jLabel_Password_.setForeground(Color.red);
     } else if (!password_1.equals(password_2)) {
-        JOptionPane.showMessageDialog(null, "Vui lòng xác nhập lại mật khẩu", "", 0);
+        JOptionPane.showMessageDialog(null, "Vui lòng xác nhập lại mật khẩu", "Thông báo", 0);
     } else {
         try {
             int id = Integer.parseInt(jTextField_ID.getText());
             if (user.checkUsernameExists(username)) {
-                JOptionPane.showMessageDialog(null, "Tên người dùng đã tồn tại", "", 0);
+                JOptionPane.showMessageDialog(null, "Tên người dùng đã tồn tại", "Thông báo", 0);
             } else {
                 user.addUser(id, firstName, lastName, username, password_1, userType);
                 // Làm mới bảng
@@ -347,7 +347,7 @@ public class SignupForm extends javax.swing.JFrame {
             // đặt lại các giá trị của các trường dữ liệu thành rỗng
             
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Người dùng thêm không hợp lệ", "", 0);
+            JOptionPane.showMessageDialog(null, "Người dùng thêm không hợp lệ", "Thông báo", 0);
         }
     }
     }//GEN-LAST:event_jButton_Add_ActionPerformed

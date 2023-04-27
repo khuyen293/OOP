@@ -245,7 +245,7 @@ public class ManageGenresForm extends javax.swing.JFrame {
             try{               
                 int id = Integer.parseInt(jTextField_ID.getText());
                 if(genre.checkGenreIdExists(name)){
-                    JOptionPane.showMessageDialog(null,"Thể loại đã tồn tại", "", 0);
+                    JOptionPane.showMessageDialog(null,"Thể loại đã tồn tại", "Thông báo", 0);
                 }
                 else{
                     genre.addGenre(id,name);                   
@@ -274,10 +274,10 @@ public class ManageGenresForm extends javax.swing.JFrame {
                 genre.editGenre(id, name);
                 jLabel_EmptyName_.setVisible(false);
                  populateJtableWithGenres();
-                  jTextField_ID.setText("");
+                  Random();
                 jTextField_Name.setText("");
             }catch(NumberFormatException ex){
-                JOptionPane.showMessageDialog(null, "Thể loại không hợp lệ - " + ex.getMessage(), "", 3);
+                JOptionPane.showMessageDialog(null, "Thể loại không hợp lệ - " + ex.getMessage(), "Thông báo", 3);
             }
             
             
@@ -288,17 +288,17 @@ public class ManageGenresForm extends javax.swing.JFrame {
         //xóa đi các thể loại
         try{
                 int id = Integer.parseInt(jTextField_ID.getText());
-                int confirm = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn xóa thể lại này?", "", JOptionPane.YES_NO_OPTION);
+                int confirm = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn xóa thể lại này?", "Thông báo", JOptionPane.YES_NO_OPTION);
             if(confirm == JOptionPane.YES_OPTION){
                 genre.removeGenre(id);
             }   
               //tichs vào genres và xóa
                  populateJtableWithGenres();
                  //xóa luôn ở form
-                 jTextField_ID.setText("");
+                 Random();
                  jTextField_Name.setText("");
             }catch(NumberFormatException ex){
-                JOptionPane.showMessageDialog(null, "Thể loại không hợp lệ-"+ex.getMessage(), "", 3);
+                JOptionPane.showMessageDialog(null, "Thể loại không hợp lệ-"+ex.getMessage(), "Thông báo", 3);
             }
     }//GEN-LAST:event_jButton_DeleteActionPerformed
 
@@ -354,15 +354,4 @@ public class ManageGenresForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField_Name;
     // End of variables declaration//GEN-END:variables
 
-//    private Object jTable_Genres_getValueAt(int index, int i) {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
-//
-//    private int jTable_Genres_getSelectedRow() {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
-
-  
-
- 
 }

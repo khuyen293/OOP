@@ -66,29 +66,7 @@ public class Member {
 	}
 	
         My_classes.Func_Class func = new My_classes.Func_Class();
-        
-        public Member getMember(int id) {
-        // Check if the user already exists
-        Member member = null;
-    String selectQuery = "SELECT * FROM members WHERE id=?";
-    try {
-        PreparedStatement ps = DB.getConnection().prepareStatement(selectQuery);
-        ps.setInt(1, id);
-        ResultSet rs = ps.executeQuery();
-        if (rs.next()) {
-           return new Member(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
-        }
-    } catch (SQLException ex) {
-        Logger.getLogger(Member.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    return member;
-}
-
 	public void addMember(int id, String firstName, String lastName, String phone, String email, String gender){
-                if (getMember(id) != null) {
-                JOptionPane.showMessageDialog(null, "ID thành viên đã tồn tại", "", 2);
-                 return;
-                }
         String insertQuery = "INSERT INTO members (id, firstName, lastName, phone, email, gender) VALUES (?,?,?,?,?,?)";
         try {
             PreparedStatement ps = DB.getConnection().prepareStatement(insertQuery);
@@ -99,9 +77,9 @@ public class Member {
             ps.setString(5, email);
             ps.setString(6, gender);
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã thêm thành viên mới","", 1);                 
+                JOptionPane.showMessageDialog(null, "Đã thêm thành viên mới","Thông báo", 1);                 
             }else{
-                JOptionPane.showMessageDialog(null, "Thành viên chưa được thêm","", 2);
+                JOptionPane.showMessageDialog(null, "Thành viên chưa được thêm","Thông báo", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Member.class.getName()).log(Level.SEVERE, null, ex);
@@ -121,9 +99,9 @@ public class Member {
             ps.setInt(6, id);
            
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã sửa thông tin thành viên", "", 1);
+                JOptionPane.showMessageDialog(null, "Đã sửa thông tin thành viên", "Thông báo", 1);
             }else{
-                JOptionPane.showMessageDialog(null, "Thông tin thành viên chưa được sửa", "", 2);
+                JOptionPane.showMessageDialog(null, "Thông tin thành viên chưa được sửa", "Thông báo", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Member.class.getName()).log(Level.SEVERE, null, ex);
@@ -138,9 +116,9 @@ public class Member {
             ps.setInt(1, id);
            
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "Đã xóa thành công thành viên", "", 1);
+                JOptionPane.showMessageDialog(null, "Đã xóa thành công thành viên", "Thông báo", 1);
             }else{
-                JOptionPane.showMessageDialog(null, "Thành viên chưa được xóa", "", 2);
+                JOptionPane.showMessageDialog(null, "Thành viên chưa được xóa", "Thông báo", 2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Member.class.getName()).log(Level.SEVERE, null, ex);

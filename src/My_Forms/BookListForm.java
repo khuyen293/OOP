@@ -357,12 +357,12 @@ public class BookListForm extends javax.swing.JFrame {
                     byte[] cover = SelectedBook.getCover();
                     func.displayImage(125, 130, cover, "", jLabel_Image);
            } else {
-                 JOptionPane.showMessageDialog(null, "Không tìm thấy sách có id này", "", 3);
+                 JOptionPane.showMessageDialog(null, "Không tìm thấy sách có id này", "Thông báo", 3);
                }
 
 
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Thông tin không hợp lệ", "", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Thông tin không hợp lệ", "Thông báo", JOptionPane.ERROR_MESSAGE);
         }
     }
         

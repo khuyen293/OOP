@@ -325,14 +325,12 @@ public class EditMemberForm extends javax.swing.JFrame {
                     jTextField_Email.setText(SelecteMember.getEmail());
                     jComboBox_Gender.setSelectedItem(SelecteMember.getGender());
     } else {
-        JOptionPane.showMessageDialog(null, "Không tìm thấy thành viên có id này", "", 3);
+        JOptionPane.showMessageDialog(null, "Không tìm thấy thành viên có id này", "Thông báo", 3);
     }
 } catch (Exception ex) {
-    JOptionPane.showMessageDialog(null, "Thông tin không hợp lệ", "", 3);
+    JOptionPane.showMessageDialog(null, "Thông tin không hợp lệ", "Thông báo", 3);
 }
-
-        
-        
+      
     }//GEN-LAST:event_jButton_Search_ActionPerformed
 
     private void jTextField_PhoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_PhoneKeyTyped
@@ -365,15 +363,4 @@ public class EditMemberForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField_Phone;
     // End of variables declaration//GEN-END:variables
 
-//    private Object jTable_Genres_getValueAt(int index, int i) {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
-//
-//    private int jTable_Genres_getSelectedRow() {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
-
-  
-
- 
 }
