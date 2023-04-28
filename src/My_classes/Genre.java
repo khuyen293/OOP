@@ -150,10 +150,10 @@ public class Genre {
     
    
          // tạo một hàm kiểm tra nếu người dùng đã tồm tại
-    public boolean checkGenreIdExists(String name) {
+    public boolean checkGenreIdExists(String name, int id) {
     boolean exists = false;
     try {
-        ResultSet rs = func.getData("select * from book_genres where name = '"+ name +"'");
+        ResultSet rs = func.getData("select * from book_genres where id = '"+ id +"' or name = '"+ name +"'");
         if(rs.next()) { 
             exists = true;
         }

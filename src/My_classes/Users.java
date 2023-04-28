@@ -128,10 +128,10 @@ public void addUser(int id, String firstName, String lastName, String username, 
         }
     }
       // tạo một hàm kiểm tra nếu người dùng đã tồm tại
-public boolean checkUsernameExists(String username) {
+public boolean checkUsernameExists(String username, int id) {
     boolean exists = false;
     try {
-        ResultSet rs = func.getData("select * from users_table where username = '"+ username + "'");
+        ResultSet rs = func.getData("select * from users_table where username = '"+ username + "' or id = '"+ id +"'");
         if(rs.next()) { 
             exists = true;
         }
@@ -183,6 +183,4 @@ public boolean checkUsernameExists(String username) {
         }
       return user;
   }
-
-
 }

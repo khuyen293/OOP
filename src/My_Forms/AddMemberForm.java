@@ -4,6 +4,7 @@ package My_Forms;
 import java.awt.Color;
 import java.util.Random;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 
 
@@ -284,13 +285,19 @@ public class AddMemberForm extends javax.swing.JFrame {
         }else if(phone.trim().isEmpty()){
             jLabel_EmptyPhone_.setVisible(true);
         }
-        else{           
+        else{ 
+            if(member.checkMemberIdExists(id)){
+                    JOptionPane.showMessageDialog(null,"ID đã tồn tại", "Thông báo", 0);
+                    Random();
+                }
+                else{
             member.addMember(id, firstName, lastName, phone, email, gender);
              Random();
              jTextField_FirstName.setText("");
              jTextField_LastName.setText("");
              jTextField_Phone_.setText("");
-             jTextField_Email.setText("");    
+             jTextField_Email.setText(""); 
+            }
             // làm mới bảng 
          
             

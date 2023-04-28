@@ -167,4 +167,18 @@ public class Author {
         return author;
    }
   
+  public boolean checkAuthorIdExists(int id) {
+    boolean exists = false;
+    try {
+        ResultSet rs = func.getData("select * from authors where id = '"+ id +"'");
+        if(rs.next()) { 
+            exists = true;
+        }
+    } catch(SQLException ex) {
+        Logger.getLogger(Author.class.getName()).log(Level.SEVERE, null, ex);
+        // Xử lý lỗi ở đây
+    }
+    return exists;
+    }
+  
 }

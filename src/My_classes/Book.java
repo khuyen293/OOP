@@ -333,8 +333,20 @@ public class Book {
         }catch(SQLException ex){
             Logger.getLogger(Func_Class.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return total;
-        
-        
+        return total;               
+    }
+    
+    public boolean checkBookIdExists(int id) {
+    boolean exists = false;
+    try {
+        ResultSet rs = func.getData("select * from books where id = '"+ id +"'");
+        if(rs.next()) { 
+            exists = true;
+        }
+    } catch(SQLException ex) {
+        Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);
+        // Xử lý lỗi ở đây
+    }
+    return exists;
     }
 }

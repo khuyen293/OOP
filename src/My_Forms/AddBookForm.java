@@ -420,9 +420,15 @@ public class AddBookForm extends javax.swing.JFrame {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String received_date = dateFormat.format(jDateChooser_Date.getDate());
             Path path = Paths.get(imagePath);
-            byte[] img = Files.readAllBytes(path);                  
+            byte[] img = Files.readAllBytes(path); 
+            if(member.checkMemberIdExists(id)){
+                    JOptionPane.showMessageDialog(null,"ID đã tồn tại", "Thông báo", 0);
+                    Random();
+                }
+                else{
             book.addBook(id, isbn, name, author_id, genre_id, quantity, publisher, price, received_date, description, img);
             Random();
+            }
         } catch (IOException ex) {
              JOptionPane.showMessageDialog(null, "Bạn cần thêm ảnh!","Thông báo", 1);
         } catch (NumberFormatException ex) {

@@ -304,12 +304,19 @@ public class ManageAuthorsForm extends javax.swing.JFrame {
         }else{ 
             try{
                 int id = Integer.parseInt(jTextField_ID.getText());
+                if(author.checkAuthorIdExists(id)){
+                    JOptionPane.showMessageDialog(null,"ID đã tồn tại", "Thông báo", 0);
+                    Random();
+                }
+                else{
                 author.addAuthor(id, firstName, lastName, field_Of_Expertise, about);
                 Random();
                 jTextField_FirstName.setText("");
                 jTextField_LastName.setText("");
                 jTextField_Expertise.setText("");
                 jTextArea_About.setText("");
+                }
+                
             }catch(Exception e){
                 
             }

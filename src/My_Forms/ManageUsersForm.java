@@ -377,9 +377,10 @@ public class ManageUsersForm extends javax.swing.JFrame {
     } else {
         try {
             int id = Integer.parseInt(jTextField_ID.getText());
-            if (user.checkUsernameExists(username)) {
+            if (user.checkUsernameExists(username, id)) {
                 JOptionPane.showMessageDialog(null, "Tên tài khoản đã tồn tại", "Thông báo", 0);
-            } else {
+            }
+                else{
                 user.addUser(id, firstName, lastName, username, password_1, userType);
                 // Làm mới bảng
                 populateJtableWithUsers();
@@ -391,7 +392,7 @@ public class ManageUsersForm extends javax.swing.JFrame {
                 jPasswordField_RectypePassword.setText("");
                 jCheckBox1.setSelected(false);
                 hideLabels();
-            }
+                }
 
             // Đặt lại các giá trị
             // đặt lại các giá trị của các trường dữ liệu thành rỗng
@@ -432,8 +433,8 @@ public class ManageUsersForm extends javax.swing.JFrame {
         }else{ 
             try{
                     int id = Integer.parseInt(jTextField_ID.getText());
-                    if(user.checkUsernameExists(username)){
-                      JOptionPane.showMessageDialog(null,"Tên tài khoản đã tồn tại", "Thông báo", 0);
+                    if(user.checkUsernameExists(username, id)){
+                      JOptionPane.showMessageDialog(null,"ID hoặc Tên tài khoản đã tồn tại", "Thông báo", 0);
                 
                          }else{
                     user.editUser(id, firstName, lastName, username, password_1, userType);

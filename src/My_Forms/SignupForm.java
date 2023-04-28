@@ -327,9 +327,10 @@ public class SignupForm extends javax.swing.JFrame {
     } else {
         try {
             int id = Integer.parseInt(jTextField_ID.getText());
-            if (user.checkUsernameExists(username)) {
-                JOptionPane.showMessageDialog(null, "Tên người dùng đã tồn tại", "Thông báo", 0);
-            } else {
+            if (user.checkUsernameExists(username, id)) {
+                JOptionPane.showMessageDialog(null, "ID hoặc Tên người dùng đã tồn tại", "Thông báo", 0);
+            }
+                else{
                 user.addUser(id, firstName, lastName, username, password_1, userType);
                 // Làm mới bảng
                 populateJtableWithUsers();
@@ -341,7 +342,7 @@ public class SignupForm extends javax.swing.JFrame {
                 jPasswordField_RectypePassword.setText("");
                 //jCheckBox1.setSelected(false);
                 hideLabels();
-            }
+                }
 
             // Đặt lại các giá trị
             // đặt lại các giá trị của các trường dữ liệu thành rỗng

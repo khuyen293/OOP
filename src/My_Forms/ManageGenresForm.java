@@ -244,8 +244,10 @@ public class ManageGenresForm extends javax.swing.JFrame {
         }else{   
             try{               
                 int id = Integer.parseInt(jTextField_ID.getText());
-                if(genre.checkGenreIdExists(name)){
-                    JOptionPane.showMessageDialog(null,"Thể loại đã tồn tại", "Thông báo", 0);
+                if(genre.checkGenreIdExists(name, id)){
+                    JOptionPane.showMessageDialog(null,"ID hoặc Thể loại đã tồn tại", "Thông báo", 0);
+                    Random();
+                    jTextField_Name.setText("");
                 }
                 else{
                     genre.addGenre(id,name);                   
