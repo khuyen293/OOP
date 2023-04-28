@@ -186,7 +186,7 @@ public class ManageUsersForm extends javax.swing.JFrame {
         jLabel6.setText("Password:");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel7.setText("Rectype Password:");
+        jLabel7.setText("Retype Password:");
 
         jPasswordField_Password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 

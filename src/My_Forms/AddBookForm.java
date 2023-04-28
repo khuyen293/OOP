@@ -179,7 +179,7 @@ public class AddBookForm extends javax.swing.JFrame {
         jSpinner_Quantity.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setText("Publsher:");
+        jLabel10.setText("Publisher:");
 
         jTextField_Publsher.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
